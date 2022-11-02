@@ -1,0 +1,30 @@
+program Verkauf3 (input, output);
+
+  var
+  Anzahl : integer;
+  
+  function Rabatt (a: integer):real;
+    
+    const
+    GRUNDPREIS = 200.00;
+    
+    var
+    p : real;
+    
+  begin
+    p := a * GRUNDPREIS;
+    if a >= 50 then
+      p := p * 0.8
+    else
+      if a > 10 then
+        p := p * 0.9;
+    Rabatt := p;
+  end; { Rabatt }
+  
+begin
+  write ('Bitte die Anzahl bestellter Teile ',
+         'eingeben: ');
+  readln (Anzahl);
+  Rabatt (Anzahl);
+  writeln ('Der Preis betraegt ', Rabatt(Anzahl), ' EUR')
+end.
